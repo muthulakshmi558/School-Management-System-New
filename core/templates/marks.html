@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2 class="text-3xl font-bold mb-6 text-white animate-pulse">Marks</h2>
+<div class="overflow-x-auto bg-white rounded-xl shadow-lg">
+<table class="min-w-full divide-y divide-gray-200">
+<thead class="bg-blue-600 text-white">
+<tr>
+<th class="px-6 py-3 text-left">Student</th>
+<th class="px-6 py-3 text-left">Subject</th>
+<th class="px-6 py-3 text-left">Marks Obtained</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-200">
+{% for mark in marks %}
+<tr class="hover:bg-blue-100 transition">
+<td class="px-6 py-4">{{ mark.student.user.get_full_name }}</td>
+<td class="px-6 py-4">{{ mark.subject }}</td>
+<td class="px-6 py-4">{{ mark.marks_obtained }}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+{% endblock %}

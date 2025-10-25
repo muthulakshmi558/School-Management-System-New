@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>School Management</title>
+{% load static %}
+<link href="{% static 'css/output.css' %}" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js" defer></script>
+<script src="{% static 'js/script.js' %}"></script>
+</head>
+<body class="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 min-h-screen font-sans">
+
+<nav class="bg-white bg-opacity-20 backdrop-blur-md px-6 py-4 flex justify-between items-center shadow-lg">
+    <h1 class="text-2xl font-bold text-white">School Management</h1>
+    <ul class="flex gap-6 text-white font-medium">
+        <li><a href="{% url 'dashboard' %}" class="hover:text-yellow-300 transition">Dashboard</a></li>
+        <li><a href="{% url 'students' %}" class="hover:text-yellow-300 transition">Students</a></li>
+        <li><a href="{% url 'teachers' %}" class="hover:text-yellow-300 transition">Teachers</a></li>
+        <li><a href="{% url 'courses' %}" class="hover:text-yellow-300 transition">Courses</a></li>
+        <li><a href="{% url 'attendance' %}" class="hover:text-yellow-300 transition">Attendance</a></li>
+        <li><a href="{% url 'marks' %}" class="hover:text-yellow-300 transition">Marks</a></li>
+        <li><a href="{% url 'parent_login' %}" class="hover:text-yellow-300 transition">Parent Login</a></li>
+    </ul>
+</nav>
+
+<div class="p-6">
+    {% block content %}{% endblock %}
+</div>
+
+</body>
+</html>

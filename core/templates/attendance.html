@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2 class="text-3xl font-bold mb-6 text-white animate-pulse">Attendance</h2>
+<div class="overflow-x-auto bg-white rounded-xl shadow-lg">
+<table class="min-w-full divide-y divide-gray-200">
+<thead class="bg-green-600 text-white">
+<tr>
+<th class="px-6 py-3 text-left">Student</th>
+<th class="px-6 py-3 text-left">Date</th>
+<th class="px-6 py-3 text-left">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-200">
+{% for att in attendance %}
+<tr class="hover:bg-green-100 transition">
+<td class="px-6 py-4">{{ att.student.user.get_full_name }}</td>
+<td class="px-6 py-4">{{ att.date }}</td>
+<td class="px-6 py-4">{{ att.status }}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+{% endblock %}

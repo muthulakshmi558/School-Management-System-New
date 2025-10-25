@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2 class="text-3xl font-bold mb-6 text-white animate-pulse">Teachers List</h2>
+<div class="overflow-x-auto bg-white rounded-xl shadow-lg">
+<table class="min-w-full divide-y divide-gray-200">
+<thead class="bg-pink-600 text-white">
+<tr>
+<th class="px-6 py-3 text-left">ID</th>
+<th class="px-6 py-3 text-left">Name</th>
+<th class="px-6 py-3 text-left">Course</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-200">
+{% for teacher in teachers %}
+<tr class="hover:bg-pink-100 transition">
+<td class="px-6 py-4">{{ teacher.id }}</td>
+<td class="px-6 py-4">{{ teacher.user.get_full_name }}</td>
+<td class="px-6 py-4">{{ teacher.course.name }}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+{% endblock %}
